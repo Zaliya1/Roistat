@@ -1,7 +1,7 @@
 <template>
   <div class="table__row">
     <div class="table__row-parent">
-      <p class="name">{{ user.name }} {{ user.id }}</p>
+      <p class="name">{{ user.name }}</p>
       <p class="tell">
         {{ user.tell }}
       </p>

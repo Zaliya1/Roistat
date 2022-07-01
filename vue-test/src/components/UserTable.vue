@@ -29,12 +29,6 @@ export default {
   props: {
     usersContact: Array
   },
-  computed: {
-    sortingUsers() {
-      // делаю перебор по computed свойству, т.к. props нельзя сортировать
-      return this.usersContact
-    }
-  },
   components: { RowTable },
   methods: {
     sortByName() {
@@ -56,6 +50,12 @@ export default {
         this.sortingUsers.sort((a, b) => (a.tell < b.tell ? 1 : -1))
         this.sortingByTell = !this.sortingByTell
       }
+    }
+  },
+  computed: {
+    sortingUsers() {
+      // делаю перебор по computed свойству, т.к. props нельзя сортировать
+      return this.usersContact
     }
   },
 };
