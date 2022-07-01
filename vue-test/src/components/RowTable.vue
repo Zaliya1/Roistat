@@ -13,6 +13,8 @@
       :user="child"
       class="table__row-child"
     ></RowTable>
+    <!-- Создаю рекурсию компонента. Компонент RowTable вызывается в RowTable. 
+    Если item.parent = id родителя, строка будет строго под родителем -->
   </div>
 </template>
 
@@ -25,6 +27,7 @@ export default {
   }
 };
 </script>
+
 <style>
 .table__row-parent {
   border: 1px solid;

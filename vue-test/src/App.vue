@@ -3,7 +3,7 @@
     <div class="container">
       <SectionButton @openModalWindow="openModalWindow" />
       <div class="users">
-        <UserTable :usersContact="usersContact" @removeUser="removeUser" />
+        <UserTable :usersContact="usersContact" />
         <ModalWindow
           v-if="activeModal"
           :usersContact="usersContact"
@@ -38,13 +38,13 @@ export default {
     },
     addUser(newUser) {
       this.usersContact.push(newUser)
-      localStorage.setItem("userContacts1", JSON.stringify(this.usersContact))
+      localStorage.setItem("usersContact", JSON.stringify(this.usersContact))
       this.activeModal = false
     },
     removeUser() {}
   },
   mounted() {
-    this.usersContact = JSON.parse(localStorage.getItem("userContacts1")) || []
+    this.usersContact = JSON.parse(localStorage.getItem("usersContact")) || []
   }
 };
 </script>
